@@ -109,7 +109,7 @@ function draw(){
   txt('KELLEN IS GOING TO',W/2,86,44);txt('MANGARATIBA',W/2,166,86,'center','#ffd84a');
   x.save();x.translate(W/2,285+bob);x.rotate(Math.sin(t*.04)*.04);x.drawImage(im.plane,-130,-68,260,135);x.restore();
   const cw=Math.round(80*141/120);x.drawImage(im.cup,W/2-330,235+Math.sin(t*.06)*10,cw,80);x.drawImage(im.cup,W/2+200,215+Math.sin(t*.06+2)*10,cw,80);x.drawImage(im.cup,W/2+260,300+Math.sin(t*.06+4)*10,cw,80);
-  txt('Pegue os copos de Guaraná Camp até chegar à praia!',W/2,386,24);
+  txt('Pegue os copos de Guaracamp até chegar à praia!',W/2,386,24);
   const pu=1+Math.sin(t*.1)*.04;x.save();x.translate(W/2,445);x.scale(pu,pu);x.fillStyle='#ffd84a';x.beginPath();x.roundRect(-130,-32,260,64,32);x.fill();x.fillStyle='#0b2a4a';x.font='bold 36px system-ui';x.textAlign='center';x.fillText('JOGAR',0,13);x.restore();
   txt('↑ ↓ ou toque na tela para voar  •  ESPAÇO para começar',W/2,514,18)}
  if(st==='over'){x.fillStyle='rgba(11,42,74,.68)';x.fillRect(0,0,W,H);txt('GAME OVER',W/2,190,72,'center','#ff6a6a');
