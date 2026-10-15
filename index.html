@@ -123,7 +123,7 @@ function rel(e){if(pid===null||e.pointerId===pid){touchY=null;pid=null}}
 cv.addEventListener('pointerdown',e=>{aInit();if(inPz(e)){e.preventDefault();setPause(!pz);return}if(pz){if(inRes(e))setPause(false);return}{const bk=inBtn(e);if(bk){e.preventDefault();BTN[bk].pid=e.pointerId;if(bk==='u')up=1;else down=1;try{cv.setPointerCapture(e.pointerId)}catch(_){}return}}press();pid=e.pointerId;touchY=ty(e);try{cv.setPointerCapture(e.pointerId)}catch(_){}});
 cv.addEventListener('pointermove',e=>{if(touchY===null||e.pointerId!==pid)return;if(e.pointerType==='mouse'&&!e.buttons){rel(e);return}touchY=ty(e)});
 for(const ev of ['pointerup','pointercancel','lostpointercapture'])addEventListener(ev,rel,true);
-const BTN={u:{cx:68,cy:476,r:56,pid:null},d:{cx:W-68,cy:476,r:56,pid:null}};
+const BTN={u:{cx:88,cy:452,r:74,pid:null},d:{cx:W-88,cy:452,r:74,pid:null}};
 function inBtn(e){if(st!=='play'||pz)return null;const r=cv.getBoundingClientRect(),px=(e.clientX-r.left)/r.width*W,py=(e.clientY-r.top)/r.height*H;for(const k in BTN){const b=BTN[k];if(Math.hypot(px-b.cx,py-b.cy)<=b.r+12)return k}return null}
 function brel(e){for(const k in BTN)if(BTN[k].pid===e.pointerId){BTN[k].pid=null;if(k==='u')up=0;else down=0}}
 for(const ev of ['pointerup','pointercancel','lostpointercapture'])addEventListener(ev,brel,true);
